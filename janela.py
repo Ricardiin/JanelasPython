@@ -2,7 +2,7 @@ import sys
 import webbrowser
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap , QIcon
-from PyQt5.QtWidgets import QApplication,QWidget,QHBoxLayout,QVBoxLayout,QLabel,QTableWidget,QTableWidgetItem,QLineEdit,QComboBox,QMessageBox,QInputDialog,QCheckBox
+from PyQt5.QtWidgets import QApplication,QWidget,QHBoxLayout,QVBoxLayout,QLabel,QLineEdit,QMessageBox,QInputDialog,QCheckBox
 
 
 
@@ -19,6 +19,7 @@ class Janelinha(QWidget):
         self.titulo_label = QLabel("Welcome to E-mail")
         self.titulo_label.setStyleSheet("QLabel{font-family:saira; font-weight:bold; font-style:bold; font-size:30pt;color:#000000}")
         self.titulo_label.setAlignment(Qt.AlignCenter)
+        self.titulo_label.setFixedHeight(100)
         #email
 
         self.email_label = QLabel("E-mail Address:")
