@@ -1,15 +1,4 @@
-#importar o pacote sys(q significa SISTEMA) para o sistema operacional 
-#gerenciar a nossa janela e permitir com que ela 
-#entrem em serviõs
 import sys
-
-#importar a biblioteca PyQt5.QtWidgets, esta biblioteca
-#tem varios controles para usarmos na nossa janela
-#são eles:
-# - QApplication -> Permite abrir e exibir a janela
-# - QWidget -> A estrutura da janela, com os elementos:
-# - Bara de titulo,maximizar,minimizar e fechar
-# - QLabel -> É um rotulo, ou seja, um texto simples de apresentação
 # - QLineEdit -> Uma caixa de texto 
 # - QPushButton -> Um botão para clicar
 # - QVBoxLayout -> Utilizado para organizar os elementos
@@ -47,7 +36,7 @@ class CadastroProduto(QWidget):
         #Superior, onde ficara a imagem, e a parte inferior
         #Onde teremos os controles
         self.superior_label = QLabel()
-        self.superior_label.setPixmap(QPixmap(".venv/nintendo.jpg"))
+        self.superior_label.setPixmap(QPixmap(".venv/videogame.jpg"))
         self.superior_label.setScaledContents(True)
         # Ajustar a altura da label
         self.superior_label.setFixedHeight(400)
@@ -70,10 +59,10 @@ class CadastroProduto(QWidget):
         self.tipo_combo.setStyleSheet("QComboBox{font-size:15pt}")
         self.tipo_combo.addItem("PlayStation 5")
         self.tipo_combo.addItem("PlayStation 4")
-        self.tipo_combo.addItem("Xbox One")
-        self.tipo_combo.addItem("Nintendo Switch")
         self.tipo_combo.addItem("Playstation 2")
         self.tipo_combo.addItem("Xbox X/S")
+        self.tipo_combo.addItem("Xbox One")
+        self.tipo_combo.addItem("Nintendo Switch")
         self.tipo_combo.addItem("Nintendo Wii")
         self.tipo_combo.addItem("SuperNintendo")
 
@@ -89,47 +78,16 @@ class CadastroProduto(QWidget):
         self.preco_edit = QLineEdit()
         self.descricao_edit.setStyleSheet("QLabel{font-size:15pt}")
 
-        self.gravar_botao = QPushButton("Gravar")
-        self.gravar_botao.setStyleSheet("QPushButton{font-size:15pt: red; color:yellow}")
 
         # Organizar estes controles em um layou vertical
         self.vcontroles = QVBoxLayout()
 
-        self.vcontroles.addWidget(self.nome_label)
-        self.vcontroles.addWidget(self.nome_edit)
-        self.vcontroles.addWidget(self.tipo_label)
-        self.vcontroles.addWidget(self.tipo_combo)
-        self.vcontroles.addWidget(self.descricao_label)
-        self.vcontroles.addWidget(self.descricao_edit)
-        self.vcontroles.addWidget(self.preco_label)
-        self.vcontroles.addWidget(self.preco_edit)
-        self.vcontroles.addWidget(self.gravar_botao)
-
-        #Adicionar os controles na parte inferior
-        self.inferior_label.setLayout(self.vcontroles)
-
-        # Vamos criar um controle de layout vertical para
-        # Dispor as label superior e inferior 
-        # Uma abaixo da outra RESPECTIVAMENTE
         self.v_layout = QVBoxLayout()
         self.v_layout.addWidget(self.superior_label)
         self.v_layout.addWidget(self.inferior_label)
         
 
-        # Adicionar o layout organizado na janela
-        self.setLayout(self.v_layout)
-
-        
-
-
-# Vamos vincular o funcionamento da janela com
-# O Gerenciamento do Sistema Operacional
-# Assim o Sistema operacional sabera Lidar com a Janela
-# Em Memória
 app = QApplication(sys.argv)
-#instancia da janela para por em funcionamento
 janela = CadastroProduto()
-#Exibir a janela na Tela
 janela.show()
-#executar a janela
 app.exec_()
