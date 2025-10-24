@@ -25,7 +25,13 @@ class CadastroClientes(QWidget):
 
         self.vertical_layout = QVBoxLayout()
         self.titulo_label = QLabel("Cadastro de Clientes")
-        self.titulo_label.setStyleSheet("QLabel{font-weight:bold; font-family:; font-size:20pt;color:black}")
+        self.titulo_label.setStyleSheet(
+            "QLabel" \
+        "{font-weight:bold; " \
+        "font-family:; " \
+        "font-size:20pt;" \
+        "color:red}")
+        #não sabia que podia fazer assim encima 
         self.vertical_layout.addWidget(self.titulo_label)
         
         # font-family:??; (fonte)
