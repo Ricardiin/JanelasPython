@@ -1,13 +1,17 @@
 import sys
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt 
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
+from PyQt5.QtGui import QPixmap, QIcon
 
+#começo da janelinha 
 class Janelinha(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Janelinha")
         self.setGeometry(600, 100, 800, 600)
         self.setFixedWidth(800)
+
+        self.setWindowIcon(QIcon(".venv/icon.png"))
 
         #TITULO
         self.titulo_label = QLabel("Welcome to E-mail")
@@ -37,8 +41,10 @@ class Janelinha(QWidget):
         #BOTAO
         self.login_button = QPushButton("Login")
         self.login_button.setFixedWidth(200)
+        self.facebook_button = QPushButton("Facebook")
+        self.instagram_button = QPushButton("Instagram")
         
-        #LAYOUT
+        #LAYOUT VERTICAL DA JANELINHA
         layout = QVBoxLayout()
         layout.setContentsMargins(50, 30, 50, 30)
         layout.setSpacing(5)
@@ -50,6 +56,7 @@ class Janelinha(QWidget):
         layout.addWidget(self.password_label)
         layout.addWidget(self.password_edit)
         layout.addWidget(self.login_button, alignment=Qt.AlignTop)
+        
         layout.addStretch()
 
         self.setLayout(layout)
