@@ -29,6 +29,7 @@ class Janelinha(QWidget):
         self.email_edit = QLineEdit()
         self.email_edit.setStyleSheet("QLineEdit{font-size:15pt}")
         self.email_label.setAlignment(Qt.AlignCenter)
+        self.email_edit.setFixedWidth(400)
 
         #password
         self.password_label = QLabel("Password:")

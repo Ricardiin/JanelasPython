@@ -28,22 +28,32 @@ class Janelinha(QWidget):
         self.subtitulo_label.setAlignment(Qt.AlignCenter)
         self.subtitulo_label.setFixedHeight(50)
         #email
+        self.email_label = QLabel("E-mail address:")
+        self.email_label.setStyleSheet("QLineEdit{font-size:15pt}")
+        self.email_edit = QLineEdit()
+        self.email_label.setFixedHeight(15)
+        self.email_label.setAlignment(Qt.AlignTop)
+        self.email_label.setAlignment(Qt.AlignHCenter)
+        
 
-        self.email_label = QLabel("E-mail Address:")
-        self.email_edit = QLineEdit()
+
         self.email_edit.setStyleSheet("QLineEdit{font-size:15pt}")
-        self.email_edit = QLineEdit()
-        self.email_edit.setStyleSheet("QLineEdit{font-size:15pt}")
-        self.email_label.setAlignment(Qt.AlignCenter)
+
+
 
         #password
         self.password_label = QLabel("Password:")
-        self.password_edit = QLineEdit()
-        self.password_edit.setStyleSheet("QLineEdit{font-size:15pt}")
-        self.password_edit = QLineEdit()
-        self.password_edit.setStyleSheet("QLineEdit{font-size:15pt}")
         self.password_label.setAlignment(Qt.AlignCenter)
+        self.password_label.setFixedHeight(500)
+
+        self.password_edit = QLineEdit()
+        self.password_edit.setStyleSheet("QLineEdit{font-size:15pt}")
         self.password_edit.setEchoMode(QLineEdit.Password)
+        self.password_edit.setAlignment(Qt.AlignCenter)
+        self.password_label.setAlignment(Qt.AlignTop)
+
+
+        
 
         #controles
         self.v_controles = QVBoxLayout()
@@ -62,7 +72,11 @@ class Janelinha(QWidget):
         #self.v_layout.addWidget(self.superior_label)
         self.v_layout.addWidget(self.titulo_label)
         self.v_layout.addWidget(self.subtitulo_label)
-        self.v_layout.addWidget(self.superior_label)
+        self.v_layout.addWidget(self.email_label)
+        self.v_layout.addWidget(self.email_edit)
+
+        self.v_layout.addWidget(self.password_label)
+        self.v_layout.addWidget(self.password_edit)
 
         
         #add nas janelas
